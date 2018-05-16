@@ -45,7 +45,7 @@ class AlbumAdapter: RecyclerView.Adapter<AlbumAdapter.AlbumHolder> () {
             titleTV.text = album.title
             artistTV.text = album.artist
             genreTV.text = album.genre
-//            releaseTV.text = album.release
+            releaseTV.text = album.release.toString()
             Picasso.with(itemView.context).load(album.coverUrl).into(coverIV)
         }
     }

@@ -7,8 +7,8 @@ data class Album (
         @SerializedName("artist") val artist : String,
         @SerializedName("genre") val genre : String,
         @SerializedName("title") val title: String,
-        @SerializedName("cover_url") val coverUrl : String
-//        @SerializedName("release") val release: Int
+        @SerializedName("cover_url") val coverUrl : String,
+        @SerializedName("release") val release: Int
 ) {
 
 }
