@@ -1,10 +1,13 @@
 package me.abraham.tapdiscos
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.Button
+import me.abraham.tapdiscos.Activities.AlbumCreateActivity
 import me.abraham.tapdiscos.Adapters.AlbumAdapter
 import me.abraham.tapdiscos.Models.Album
 import me.abraham.tapdiscos.Services.AlbumClient
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private val albumAdapter = AlbumAdapter()
     private lateinit var albumRV: RecyclerView
+    private lateinit var albumBtn: Button
     private lateinit var pullToRefresh : SwipeRefreshLayout
     private lateinit var albumClient : AlbumClient
 
@@ -25,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        albumBtn = findViewById(R.id.btn_album_create)
         albumRV = findViewById(R.id.albumRV)
         pullToRefresh = findViewById(R.id.pullToRefresh)
 
@@ -47,6 +52,11 @@ class MainActivity : AppCompatActivity() {
         pullToRefresh.setOnRefreshListener {
             pullToRefresh.isEnabled = false
             fetchData()
+        }
+
+        albumBtn.setOnClickListener {
+            val intent = Intent(this, AlbumCreateActivity::class.java)
+            startActivity(intent)
         }
     }
 
