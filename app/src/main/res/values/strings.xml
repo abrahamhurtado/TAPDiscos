@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TAPDiscos</string>
+    <string name="album_title_placeholder">Nombre del álbum</string>
+    <string name="album_artist_placeholder">Nombre del artista</string>
+    <string name="album_genre_placeholder">Género del álbum</string>
+    <string name="album_release_placeholder">2018</string>
 </resources>
